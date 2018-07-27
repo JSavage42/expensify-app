@@ -2,6 +2,9 @@
 
 exports[`should ender ExpenseList with expenses 1`] = `
 <div>
+  <h1>
+    Expense List
+  </h1>
   <ExpensnseListItem
     amount={195}
     createdAt={0}
@@ -26,19 +29,16 @@ exports[`should ender ExpenseList with expenses 1`] = `
     key="3"
     note=""
   />
-  <h1>
-    Expense List
-  </h1>
 </div>
 `;
 
 exports[`should render ExpenseList with empty message 1`] = `
 <div>
-  <p>
-    No Expenses
-  </p>
   <h1>
     Expense List
   </h1>
+  <p>
+    No Expenses
+  </p>
 </div>
 `;
