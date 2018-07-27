@@ -4,6 +4,7 @@ import { AddExpensePage } from '../../components/AddExpensePage';
 import expenses from '../fixtures/expenses';
 
 let addExpense, history, wrapper;
+
 beforeEach(() => {
   addExpense = jest.fn();
   history = { push: jest.fn() };
@@ -19,4 +20,3 @@ test('should handle onSubmit', () => {
   expect(history.push).toHaveBeenLastCalledWith('/');
   expect(addExpense).toHaveBeenLastCalledWith(expenses[1]);
 });
-

@@ -16,8 +16,7 @@ module.exports = (env) => {
         loader: 'babel-loader',
         test: /\.js$/,
         exclude: /node_modules/
-      },
-      {
+      }, {
         test: /\.s?css$/,
         use: CSSExtract.extract({
           use: [
@@ -32,14 +31,15 @@ module.exports = (env) => {
               options: {
                 sourceMap: true
               }
-            }]
+            }
+          ]
         })
       }]
     },
     plugins: [
       CSSExtract
     ],
-    devtool: isProduction ? "source-map" : 'inline-source-map',
+    devtool: isProduction ? 'source-map' : 'inline-source-map',
     devServer: {
       contentBase: path.join(__dirname, 'public'),
       historyApiFallback: true,

@@ -2,8 +2,6 @@ import React from 'react';
 import moment from 'moment';
 import { SingleDatePicker } from 'react-dates';
 
-const now = moment();
-
 export default class ExpenseForm extends React.Component {
   constructor(props) {
     super(props);
@@ -15,19 +13,16 @@ export default class ExpenseForm extends React.Component {
       createdAt: props.expense ? moment(props.expense.createdAt) : moment(),
       calendarFocused: false,
       error: ''
-    }
+    };
   }
-
   onDescriptionChange = (e) => {
     const description = e.target.value;
     this.setState(() => ({ description }));
   };
-
   onNoteChange = (e) => {
     const note = e.target.value;
     this.setState(() => ({ note }));
   };
-
   onAmountChange = (e) => {
     const amount = e.target.value;
 
@@ -35,24 +30,20 @@ export default class ExpenseForm extends React.Component {
       this.setState(() => ({ amount }));
     }
   };
-
   onDateChange = (createdAt) => {
     if (createdAt) {
       this.setState(() => ({ createdAt }));
     }
   };
-
   onFocusChange = ({ focused }) => {
     this.setState(() => ({ calendarFocused: focused }));
   };
-
   onSubmit = (e) => {
     e.preventDefault();
 
     if (!this.state.description || !this.state.amount) {
-      this.setState(() => ({ error: 'Please provide Description and amount.' }));
+      this.setState(() => ({ error: 'Please provide description and amount.' }));
     } else {
-      // Clear the error
       this.setState(() => ({ error: '' }));
       this.props.onSubmit({
         description: this.state.description,
@@ -62,7 +53,6 @@ export default class ExpenseForm extends React.Component {
       });
     }
   };
-
   render() {
     return (
       <div>
