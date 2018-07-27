@@ -4,9 +4,7 @@ import { SingleDatePicker } from 'react-dates';
 
 const now = moment();
 
-console.log(now.format("MMM Do, YYYY"));
-
-export default class ExpenseForm extends React.Component  {
+export default class ExpenseForm extends React.Component {
   constructor(props) {
     super(props);
 
@@ -45,7 +43,7 @@ export default class ExpenseForm extends React.Component  {
   };
 
   onFocusChange = ({ focused }) => {
-    this.setState(() => ({ calendarFocused: focused}));
+    this.setState(() => ({ calendarFocused: focused }));
   };
 
   onSubmit = (e) => {
@@ -70,7 +68,7 @@ export default class ExpenseForm extends React.Component  {
       <div>
         {this.state.error && <p>{this.state.error}</p>}
         <form onSubmit={this.onSubmit}>
-          <input 
+          <input
             type="text"
             placeholder="Description"
             autoFocus
@@ -89,7 +87,7 @@ export default class ExpenseForm extends React.Component  {
             focused={this.state.calendarFocused}
             onFocusChange={this.onFocusChange}
             numberOfMonths={1}
-            isOutsideRange={() => false} 
+            isOutsideRange={() => false}
           />
           <textarea
             placeholder="Add a note for your expense (optional)"
