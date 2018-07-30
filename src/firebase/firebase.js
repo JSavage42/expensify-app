@@ -13,6 +13,11 @@ firebase.initializeApp(config);
 
 const database = firebase.database();
 
+database.ref('notes').push({
+  title: 'To Do',
+  body: 'Go for a run'
+});
+
 // database.ref().set({
 //   name: 'Jason Savage',
 //   age: 28,
